@@ -1,0 +1,29 @@
+/* Catalog */
+.catalog {
+	width: 100%;
+	text-align: center;
+}
+
+.catalog h2 {
+	font-size: 3rem;
+	font-weight: 700;
+	color: var(--catalog-title);
+	margin-bottom: 1rem;
+	transition: color 0.3s ease;
+}
+
+.catalog > p {
+	font-size: 1.6rem;
+	color: var(--catalog-text);
+	line-height: 1.8;
+	margin-bottom: 2rem;
+	transition: color 0.3s ease;
+}
+
+.products {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 3rem;
+	padding: 2rem;
+}
