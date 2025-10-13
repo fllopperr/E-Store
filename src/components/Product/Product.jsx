@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Product.css'
 
 function Product({ productObject, onView }) {
 	const { name, price, description, photoName, soldOut, details } =
 		productObject
 	const [expanded, setExpanded] = useState(false)
+	const cardRef = useRef(null)
 
 	useEffect(() => {
-		if (expanded) {
+		if (expanded && cardRef.current) {
+			cardRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
 			const timer = setTimeout(() => {
 				setExpanded(false)
 			}, 10_000)
@@ -20,8 +22,10 @@ function Product({ productObject, onView }) {
 		setExpanded(next)
 		if (next) onView(productObject)
 	}
+
 	return (
 		<li
+			ref={cardRef}
 			className={`product ${soldOut ? 'Продан' : ''} ${
 				expanded ? 'В наличии' : ''
 			}}`}
