@@ -42,6 +42,7 @@ function Product({ productObject, onView }) {
 				<p>{description}</p>
 				<span>{price}</span>
 				<p className='status'>Статус: {soldOut ? 'Продан' : 'В наличии'}</p>
+
 				<button
 					className={`fav-btn ${isFavorites ? 'active' : ''}`}
 					onClick={e => {

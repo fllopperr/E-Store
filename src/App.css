@@ -10,9 +10,17 @@ html {
 	font-size: 62.5%;
 }
 
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	transition: all 0.3s ease;
+}
+
 .light-mode {
 	--bg-color: #ffffff;
-	--text-color: #1e1e1e;
+	--text-color: #ffffff;
 	--container-bg: #f4f6f8;
 	--header-bg: #41546a;
 	--product-bg: #ffffff;
@@ -23,11 +31,14 @@ html {
 	--product-text: #666;
 	--price-color: #0070f3;
 	--shadow-color: rgba(0, 0, 0, 0.1);
-	--product-shadow: rgba(0, 112, 243, 0.1);
+	--product-hover-shadow: rgba(0, 112, 243, 0.15);
+	--image-bg: #f8f9fa;
+	--details-border: #e0e0e0;
+	--fav-btn-bg: rgba(255, 255, 255, 0.9);
+	--border-color: #e0e0e0;
 }
 
 .dark-mode {
-	--bg-color-all: rgb(63, 63, 63);
 	--bg-color: #1a1a1a;
 	--text-color: #ffffff;
 	--container-bg: #2d2d2d;
@@ -40,36 +51,28 @@ html {
 	--product-text: #cccccc;
 	--price-color: #4dabf7;
 	--shadow-color: rgba(0, 0, 0, 0.3);
-	--product-shadow: rgba(77, 171, 247, 0.2);
-}
-
-body {
-	font-family: 'Montserrat', sans-serif;
-	color: var(--text-color);
-	background-color: var(--bg-color-all);
-	min-height: 100vh;
-	padding: 4rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: all 0.3s ease;
+	--product-hover-shadow: rgba(77, 171, 247, 0.25);
+	--image-bg: #2d2d2d;
+	--details-border: #555555;
+	--fav-btn-bg: rgba(58, 58, 58, 0.9);
+	--border-color: #555555;
 }
 
 .container {
-	max-width: 120rem;
-	margin: 0 auto;
+	width: 100%;
+	max-width: none;
+	margin: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 3rem;
 	padding: 2rem;
 	background-color: var(--container-bg);
-	border-radius: 1.2rem;
+	border-radius: 0;
 	box-shadow: 0px 4px 12px var(--shadow-color);
 	transition: all 0.3s ease;
 }
 
-/* Дополнительные стили для темной темы */
 .dark-mode .btn {
 	background-color: #1971c2;
 }

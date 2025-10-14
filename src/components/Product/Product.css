@@ -1,73 +1,108 @@
 .product {
-	background-color: var(--product-bg);
-	border-radius: 1rem;
-	padding: 1.5rem;
-	box-shadow: 0 8px 24px var(--product-shadow);
-	transition: all 0.3s ease;
+	position: relative;
+	border-radius: 8px;
+	padding: 16px;
+	box-shadow: 0 1px 3px var(--shadow-color);
+	transition: all 0.2s ease;
+	border: 1px solid var(--border-color);
+	overflow: hidden;
 }
 
 .product:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 12px 36px var(--product-shadow);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px var(--product-hover-shadow);
 }
 
 .product img {
 	width: 100%;
-	height: auto;
-	border-radius: 0.8rem;
-	margin-bottom: 1.2rem;
+	height: 200px;
+	object-fit: contain;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	padding: 10px;
 }
 
 .product div {
 	text-align: left;
-	padding: 0.5rem 0;
+	padding: 0;
 }
 
 .product h3 {
-	font-size: 2rem;
-	font-weight: 700;
+	font-size: 14px;
+	font-weight: 600;
 	color: var(--product-title);
-	margin-bottom: 0.5rem;
-	transition: color 0.3s ease;
+	line-height: 1.4;
+	height: 40px;
+	overflow: hidden;
 }
 
 .product p {
-	font-size: 1.4rem;
+	font-size: 12px;
 	color: var(--product-text);
 	font-weight: 400;
-	margin-bottom: 1.2rem;
-	transition: color 0.3s ease;
+	margin-bottom: 8px;
+	line-height: 1.3;
 }
 
 .product span {
-	display: block;
-	font-size: 1.6rem;
-	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
 	color: var(--price-color);
-	transition: color 0.3s ease;
-}
-
-.product.sold-out {
-	opacity: 0.6;
-	pointer-events: none;
-}
-
-.product.sold-out span {
-	color: #ff4d4d;
 }
 
 .details {
-	color: var(--text-color);
+	margin-top: 12px;
+	padding-top: 12px;
+	border-top: 1px solid var(--details-border);
+}
+
+.details ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.details li {
+	font-size: 12px;
+	color: var(--product-text);
+	padding: 2px 0;
+	position: relative;
+	padding-left: 12px;
+}
+
+.details li::before {
+	content: '•';
+	position: absolute;
+	left: 0;
+	color: var(--price-color);
 }
 
 .fav-btn {
-	background: none;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: var(--fav-btn-bg);
 	border: none;
-	font-size: 3rem;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
 	cursor: pointer;
-	transition: transform 0.3s;
+	box-shadow: 0 1px 3px var(--shadow-color);
+	transition: all 0.2s ease;
+	backdrop-filter: blur(5px);
 }
 
-.fav-btn:active {
-	color: red;
+.fav-btn:hover {
+	background: var(--product-bg);
+	transform: scale(1.1);
+}
+
+.fav-btn.active {
+	background: var(--fav-btn-bg);
 }

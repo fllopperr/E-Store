@@ -46,7 +46,7 @@ const productData = [
 		name: 'Tablet Air',
 		description: 'Флагманский планшет с ярким дисплеем и высокой скоростью.',
 		price: 800,
-		photoName: '/tablet.jpeg',
+		photoName: '/tablet.png',
 		soldOut: false,
 		details: [
 			'Экран: 11" IPS, 120Hz',
@@ -61,7 +61,7 @@ const productData = [
 		name: 'Kolonka JBL',
 		description: 'Колонка для музыки.',
 		price: 200,
-		photoName: '/speaker.jpeg',
+		photoName: '/speaker.png',
 		soldOut: false,
 		details: [
 			'Мощность: 80W',
@@ -76,7 +76,7 @@ const productData = [
 		name: 'Keyboard',
 		description: 'Клавиатура для ПК.',
 		price: 450,
-		photoName: '/keyboard.jpeg',
+		photoName: '/keyboard.png',
 		soldOut: false,
 		details: [
 			'Тип: механическая',
@@ -91,7 +91,7 @@ const productData = [
 		name: 'Mouse',
 		description: 'Мышь для ПК.',
 		price: 120,
-		photoName: '/mouse.jpeg',
+		photoName: '/mouse.png',
 		soldOut: false,
 		details: [
 			'Тип: беспроводная',

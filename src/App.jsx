@@ -46,7 +46,7 @@ function App() {
 				},
 				{
 					path: 'catalog',
-					element: <Catalog />,
+					element: <Catalog onView={setLastViewed} />,
 				},
 				{
 					path: 'about',
