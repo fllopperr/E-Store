@@ -9,16 +9,19 @@ import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 import About from './components/Pages/About'
 import Contact from './components/Pages/Contact'
+import FavoriteProvider from './favorite/FavoriteContext'
 
 function Root({ lightMode, setLightMode, lastViewed }) {
 	return (
-		<div className={lightMode ? 'light-mode' : 'dark-mode'}>
-			<div className='container'>
-				<Header lightMode={lightMode} setLightMode={setLightMode} />
-				<Outlet />
-				<Footer lastViewed={lastViewed} />
+		<FavoriteProvider>
+			<div className={lightMode ? 'light-mode' : 'dark-mode'}>
+				<div className='container'>
+					<Header lightMode={lightMode} setLightMode={setLightMode} />
+					<Outlet />
+					<Footer lastViewed={lastViewed} />
+				</div>
 			</div>
-		</div>
+		</FavoriteProvider>
 	)
 }
 

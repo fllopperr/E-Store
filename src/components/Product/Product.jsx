@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useFavorites } from '../../favorite/FavoriteContext'
 import './Product.css'
 
 function Product({ productObject, onView }) {
@@ -6,6 +7,9 @@ function Product({ productObject, onView }) {
 		productObject
 	const [expanded, setExpanded] = useState(false)
 	const cardRef = useRef(null)
+	const { favorites, toggleFavorites } = useFavorites()
+
+	const isFavorites = favorites.some(p => p.name === name)
 
 	useEffect(() => {
 		if (expanded && cardRef.current) {
@@ -38,6 +42,15 @@ function Product({ productObject, onView }) {
 				<p>{description}</p>
 				<span>{price}</span>
 				<p className='status'>Статус: {soldOut ? 'Продан' : 'В наличии'}</p>
+				<button
+					className={`fav-btn ${isFavorites ? 'active' : ''}`}
+					onClick={e => {
+						e.stopPropagation()
+						toggleFavorites(productObject)
+					}}
+				>
+					{isFavorites ? '❤️' : '🤍'}
+				</button>
 				{expanded && (
 					<div className='details'>
 						{Array.isArray(details) && details.length > 0 ? (

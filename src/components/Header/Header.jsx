@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useFavorites } from '../../favorite/FavoriteContext'
 import './Header.css'
 
 function Header({ lightMode, setLightMode }) {
@@ -8,6 +9,7 @@ function Header({ lightMode, setLightMode }) {
 
 	const [now, setNow] = useState(() => new Date())
 	const hour = now.getHours()
+	const { count } = useFavorites()
 
 	useEffect(() => {
 		const id = setInterval(() => setNow(new Date()), 60_000)
@@ -52,6 +54,9 @@ function Header({ lightMode, setLightMode }) {
 							<img src='./moon.svg' alt='' />
 						)}
 					</button>
+					<div>
+						<span className='favorites'>❤️ {count}</span>
+					</div>
 				</nav>
 			</div>
 			<div className='working-hours'>

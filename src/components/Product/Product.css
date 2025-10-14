@@ -59,3 +59,15 @@
 .details {
 	color: var(--text-color);
 }
+
+.fav-btn {
+	background: none;
+	border: none;
+	font-size: 3rem;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.fav-btn:active {
+	color: red;
+}
