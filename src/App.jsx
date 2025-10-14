@@ -26,7 +26,7 @@ function Root({ lightMode, setLightMode, lastViewed }) {
 }
 
 function App() {
-	const [lightMode, setLightMode] = useState(false)
+	const [lightMode, setLightMode] = useState(true)
 	const [lastViewed, setLastViewed] = useState(null)
 
 	const router = createBrowserRouter([
