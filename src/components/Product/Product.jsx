@@ -30,18 +30,18 @@ function Product({ productObject, onView }) {
 	return (
 		<li
 			ref={cardRef}
-			className={`product ${soldOut ? 'Продан' : ''} ${
-				expanded ? 'В наличии' : ''
-			}}`}
+			className={`product ${expanded ? 'expanded' : ''}`}
 			onClick={toggle}
 			style={{ cursor: 'pointer' }}
 		>
-			<img src={photoName} alt={photoName} />
-			<div>
-				<h3>{name}</h3>
-				<p>{description}</p>
-				<span>{price}</span>
-				<p className='status'>Статус: {soldOut ? 'Продан' : 'В наличии'}</p>
+			<div className='product-content'>
+				<img src={photoName} alt={photoName} />
+				<div>
+					<h3>{name}</h3>
+					<p>{description}</p>
+					<span>{price}</span>
+					<p className='status'>Статус: {soldOut ? 'Продан' : 'В наличии'}</p>
+				</div>
 
 				<button
 					className={`fav-btn ${isFavorites ? 'active' : ''}`}
@@ -52,20 +52,21 @@ function Product({ productObject, onView }) {
 				>
 					{isFavorites ? '❤️' : '🤍'}
 				</button>
-				{expanded && (
-					<div className='details'>
-						{Array.isArray(details) && details.length > 0 ? (
-							<ul>
-								{details.map((d, i) => (
-									<li key={i}>{d}</li>
-								))}
-							</ul>
-						) : (
-							<p>Подробности позже...</p>
-						)}
-					</div>
-				)}
 			</div>
+
+			{expanded && (
+				<div className='details'>
+					{Array.isArray(details) && details.length > 0 ? (
+						<ul>
+							{details.map((d, i) => (
+								<li key={i}>{d}</li>
+							))}
+						</ul>
+					) : (
+						<p>Подробности позже...</p>
+					)}
+				</div>
+			)}
 		</li>
 	)
 }

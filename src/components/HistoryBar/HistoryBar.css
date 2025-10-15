@@ -1,0 +1,116 @@
+/* Footer */
+.history {
+	text-align: center;
+	width: 100%;
+	font-size: 1.6rem;
+	color: var(--text-color);
+	background-color: var(--footer-bg);
+	padding: 2rem;
+	border-radius: 8px;
+	margin-top: 2rem;
+	transition: all 0.3s ease;
+	box-shadow: 0 -2px 8px var(--shadow-color);
+	border: 1px solid var(--border-color);
+}
+
+.history img {
+	width: 120px;
+	height: 120px;
+	object-fit: contain;
+	border-radius: 8px;
+	border: 2px solid var(--border-color);
+	padding: 8px;
+	background-color: var(--image-bg);
+	transition: all 0.3s ease;
+}
+
+.history img:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px var(--product-hover-shadow);
+}
+
+.history h3 {
+	font-size: 1.8rem;
+	font-weight: 700;
+	margin: 1rem 0 0.5rem 0;
+	color: var(--product-title);
+}
+
+.history p {
+	font-size: 1.4rem;
+	margin-top: 0.5rem;
+	color: var(--product-text);
+	opacity: 0.9;
+}
+
+.order {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.btn {
+	color: var(--text-color);
+	font-family: inherit;
+	border: none;
+	font-size: 1.6rem;
+	font-weight: 600;
+	background-color: var(--price-color);
+	padding: 1.2rem 3rem;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.btn:hover {
+	background-color: var(--price-color);
+	filter: brightness(0.9);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px var(--product-hover-shadow);
+}
+@media (max-width: 768px) {
+	.history {
+		padding: 1.5rem;
+		border-radius: 6px;
+		margin-top: 1.5rem;
+	}
+
+	.history img {
+		width: 100px;
+		height: 100px;
+	}
+
+	.history h3 {
+		font-size: 1.6rem;
+	}
+
+	.history p {
+		font-size: 1.2rem;
+	}
+
+	.btn {
+		font-size: 1.4rem;
+		padding: 1rem 2rem;
+	}
+
+	.order {
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+}
+
+.history > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	border-radius: 8px;
+	background-color: var(--product-bg);
+	margin: 0 auto;
+	max-width: 300px;
+	border: 1px solid var(--border-color);
+}

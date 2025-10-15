@@ -1,0 +1,113 @@
+:root {
+	--header-bg: #2c3e50;
+	--container-bg: #ffffff;
+	--product-bg: #f8f9fa;
+	--catalog-title: #2c3e50;
+	--catalog-text: #555;
+	--product-title: #34495e;
+	--price-color: #e74c3c;
+	--border-color: #e0e0e0;
+	--shadow-color: rgba(0, 0, 0, 0.1);
+	--product-hover-shadow: rgba(231, 76, 60, 0.2);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #f5f6fa;
+	color: #333;
+	line-height: 1.6;
+}
+
+.page {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	background-color: var(--container-bg);
+	border-radius: 12px;
+	box-shadow: 0 4px 12px var(--shadow-color);
+	transition: all 0.3s ease;
+}
+
+.title {
+	font-size: 3.2rem;
+	font-weight: 700;
+	color: var(--catalog-title);
+	text-align: center;
+	margin-bottom: 3rem;
+	padding-bottom: 1rem;
+	border-bottom: 2px solid var(--border-color);
+}
+
+.subtitle {
+	font-size: 2.4rem;
+	font-weight: 600;
+	color: var(--catalog-title);
+	margin-bottom: 2rem;
+}
+
+.button {
+	padding: 1.4rem 2rem;
+	background-color: var(--price-color);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.6rem;
+	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-top: 1rem;
+}
+
+.button:hover {
+	background-color: var(--header-bg);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.link {
+	color: var(--price-color);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.link:hover {
+	color: var(--catalog-title);
+	text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.page {
+		padding: 1.5rem;
+		margin: 1rem;
+	}
+
+	.title {
+		font-size: 2.8rem;
+	}
+
+	.subtitle {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.page {
+		padding: 1rem;
+	}
+
+	.title {
+		font-size: 2.4rem;
+	}
+}
