@@ -40,6 +40,29 @@
 	height: 10rem;
 }
 
+.search-bar {
+	position: relative;
+}
+
+.search-input {
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	background-color: var(--header-bg);
+	box-shadow: 0 -2px 8px var(--shadow-color);
+	height: 2.5rem;
+	width: 20rem;
+	margin: 0.5rem 0 0 2.5rem;
+	padding: 0 0 0.3rem 0.5rem;
+	color: var(--text-color);
+}
+
+.search-icon {
+	position: absolute;
+	right: 3px;
+	top: 7px;
+	fill: #ffffff;
+}
+
 /* Центральный блок - навигация */
 .nav {
 	display: flex;

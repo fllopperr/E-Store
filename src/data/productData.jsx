@@ -2,35 +2,35 @@ const productData = [
 	{
 		name: 'Laptop Pro',
 		description: 'Мощный ноутбук для работы, учебы и развлечений.',
-		price: 1200,
+		price: 32500,
 		photoName: '/laptop.png',
 		soldOut: false,
 	},
 	{
 		name: 'Smartphone X',
 		description: 'Флагманский смартфон с ярким дисплеем и высокой скоростью.',
-		price: 800,
+		price: 24800,
 		photoName: '/smartphone.png',
 		soldOut: false,
 	},
 	{
 		name: 'Wireless Headphones',
 		description: 'Наушники с шумоподавлением и чистым, насыщенным звуком.',
-		price: 200,
+		price: 35200,
 		photoName: '/headphones.png',
 		soldOut: false,
 	},
 	{
 		name: 'Smartwatch Z',
 		description: 'Стильные смарт-часы для спорта и повседневной жизни.',
-		price: 150,
+		price: 98150,
 		photoName: '/smartwatch.png',
 		soldOut: false,
 	},
 	{
 		name: 'Gaming Console',
 		description: 'Игровая консоль нового поколения для ярких впечатлений.',
-		price: 400,
+		price: 65600,
 		photoName: '/console.png',
 		soldOut: true,
 	},
@@ -38,14 +38,14 @@ const productData = [
 		name: '4K TV',
 		description:
 			'Телевизор 4K Ultra HD для полного погружения в фильмы и игры.',
-		price: 1000,
+		price: 681000,
 		photoName: '/tv.png',
 		soldOut: false,
 	},
 	{
 		name: 'Tablet Air',
 		description: 'Флагманский планшет с ярким дисплеем и высокой скоростью.',
-		price: 800,
+		price: 86800,
 		photoName: '/tablet.png',
 		soldOut: false,
 		details: [
@@ -60,7 +60,7 @@ const productData = [
 	{
 		name: 'Kolonka JBL',
 		description: 'Колонка для музыки.',
-		price: 200,
+		price: 45200,
 		photoName: '/speaker.png',
 		soldOut: false,
 		details: [
@@ -75,7 +75,7 @@ const productData = [
 	{
 		name: 'Keyboard',
 		description: 'Клавиатура для ПК.',
-		price: 450,
+		price: 12450,
 		photoName: '/keyboard.png',
 		soldOut: false,
 		details: [
@@ -90,7 +90,7 @@ const productData = [
 	{
 		name: 'Mouse',
 		description: 'Мышь для ПК.',
-		price: 120,
+		price: 11120,
 		photoName: '/mouse.png',
 		soldOut: false,
 		details: [

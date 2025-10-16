@@ -1,6 +1,7 @@
 /* Catalog */
 .catalog {
 	width: 100%;
+	min-height: 50vh;
 	text-align: center;
 }
 
