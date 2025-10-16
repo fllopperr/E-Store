@@ -88,6 +88,27 @@ function App() {
 		})
 	}
 
+	const decrementBasket = (product, e) => {
+		e?.stopPropagation()
+		setBasketAdd(prevProduct => {
+			const existingItem = prevProduct.find(item => item.name === product.name)
+
+			if (existingItem) {
+				return prevProduct
+					.map(item =>
+						item.name === product.name
+							? {
+									...item,
+									count: item.count - 1,
+									currentPrice: product.price * (item.count - 1),
+							  }
+							: item
+					)
+					.filter(item => item.count !== 0)
+			}
+		})
+	}
+
 	const router = createBrowserRouter([
 		{
 			path: '/',
@@ -101,6 +122,7 @@ function App() {
 					basketAdd={basketAdd}
 					setBasketAdd={setBasketAdd}
 					addToBasket={addToBasket}
+					decrementBasket={decrementBasket}
 				/>
 			),
 			children: [
@@ -134,7 +156,14 @@ function App() {
 				},
 				{
 					path: 'basket',
-					element: <Basket basketAdd={basketAdd} setBasketAdd={setBasketAdd} />,
+					element: (
+						<Basket
+							basketAdd={basketAdd}
+							setBasketAdd={setBasketAdd}
+							addToBasket={addToBasket}
+							decrementBasket={decrementBasket}
+						/>
+					),
 				},
 			],
 		},

@@ -15,6 +15,10 @@ function HistoryBar({ lastViewed, addToBasket }) {
 		}
 	}, [lastViewed])
 
+	function removeHistoryEl(removeItem) {
+		setHistory(prev => prev.filter(item => item.name !== removeItem.name))
+	}
+
 	const scroll = direction => {
 		if (!sliderRef.current) return
 		const scrollAmount = 220
@@ -67,6 +71,9 @@ function HistoryBar({ lastViewed, addToBasket }) {
 										</button>
 									</div>
 								</div>
+								<button className='trash' onClick={() => removeHistoryEl(item)}>
+									<img src='./trash.svg' alt='delete' />
+								</button>
 							</div>
 						))}
 				</div>

@@ -1,0 +1,124 @@
+.form-buy {
+	background-color: var(--container-bg);
+	border-radius: 12px;
+	padding: 24px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+	border: 1px solid #e0e0e0;
+}
+
+.form-buy h2 {
+	margin: 0 0 20px 0;
+	font-size: 24px;
+	font-weight: 600;
+	color: #333;
+	text-align: center;
+}
+
+.form-buy p {
+	margin: 0 0 16px 0;
+	font-size: 16px;
+	color: #666;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.form-buy h3 {
+	margin: 0 0 24px 0;
+	font-size: 20px;
+	font-weight: 600;
+	color: #2c5aa0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.form-buy h3::after {
+	content: '₽';
+	font-size: 18px;
+	color: #2c5aa0;
+}
+
+.form-buy button {
+	width: 100%;
+	padding: 16px 24px;
+	background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(44, 90, 160, 0.3);
+}
+
+.form-buy button:hover {
+	background: linear-gradient(135deg, #1e3a8a, #152c6b);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(44, 90, 160, 0.4);
+}
+
+.form-buy button:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 4px rgba(44, 90, 160, 0.3);
+}
+
+.form-buy button:disabled {
+	background: #ccc;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+/* Анимации */
+.form-buy {
+	animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.form-buy {
+		padding: 20px;
+		margin-top: 20px;
+	}
+
+	.form-buy h2 {
+		font-size: 20px;
+		margin-bottom: 16px;
+	}
+
+	.form-buy h3 {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	.form-buy button {
+		padding: 14px 20px;
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.form-buy {
+		padding: 16px;
+	}
+
+	.form-buy h2 {
+		font-size: 18px;
+	}
+
+	.form-buy h3 {
+		font-size: 16px;
+	}
+}

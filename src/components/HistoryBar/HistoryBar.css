@@ -34,6 +34,7 @@
 }
 
 .last-viewed {
+	position: relative;
 	flex: 0 0 auto;
 	width: 200px;
 	display: flex;
@@ -72,6 +73,24 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	height: 4rem;
+}
+
+.trash {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	border: 1px solid var(--border-color);
+	background: var(--footer-bg);
+	border-radius: 15px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.trash img {
+	width: 40px;
+	height: 40px;
 }
 
 .order-info {
