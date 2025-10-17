@@ -21,6 +21,7 @@
 }
 
 .basket-item {
+	position: relative;
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -220,6 +221,37 @@
 	cursor: not-allowed;
 	transform: none;
 	box-shadow: none;
+}
+
+.trash-basket {
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 6px;
+	background: var(--price-color);
+	color: white;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+
+.trash-basket:hover {
+	transform: translateY(-2px) scale(1.05);
+}
+
+.trash-basket:active {
+	transform: translateY(0) scale(1);
+}
+
+.trash-basket img {
+	width: 20px;
+	height: 20px;
+	filter: brightness(0) invert(1);
 }
 
 /* Анимации */

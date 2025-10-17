@@ -5,14 +5,20 @@ import './Catalog.css'
 
 function Catalog({ onView, searchTerm, addToBasket }) {
 	const debounceSearch = useDebounce(searchTerm, 500)
+	const getStatusText = soldOut => (soldOut ? 'продана' : 'в наличии')
 
 	return (
 		<main className='catalog'>
 			<ul className='products'>
 				{productData
-					.filter(product =>
-						product.name.toLowerCase().includes(debounceSearch.toLowerCase())
-					)
+					.filter(product => {
+						const search = debounceSearch.toLowerCase()
+						return (
+							product.name.toLowerCase().includes(search) ||
+							product.description.toLowerCase().includes(search) ||
+							getStatusText(product.soldOut).toLowerCase().includes(search)
+						)
+					})
 					.map(item => (
 						<Product
 							key={item.name}

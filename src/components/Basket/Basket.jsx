@@ -1,7 +1,10 @@
 import BasketSideBar from '../BasketSideBar/BasketSideBar'
 import './Basket.css'
 
-function Basket({ basketAdd, addToBasket, decrementBasket }) {
+function Basket({ basketAdd, addToBasket, decrementBasket, setBasketAdd }) {
+	const removeFromBasket = itemToRemove => {
+		setBasketAdd(prev => prev.filter(item => item.name !== itemToRemove.name))
+	}
 	return (
 		<div className='basket-container'>
 			<div className='order-container'>
@@ -32,6 +35,12 @@ function Basket({ basketAdd, addToBasket, decrementBasket }) {
 									</div>
 								</div>
 							</div>
+							<button
+								className='trash-basket'
+								onClick={() => removeFromBasket(item)}
+							>
+								<img src='./trash.svg' alt='delete' />
+							</button>
 						</div>
 					))
 				) : (
