@@ -11,7 +11,7 @@ function Basket({ basketAdd, addToBasket, decrementBasket, setBasketAdd }) {
 				{basketAdd.length > 0 ? (
 					basketAdd.map((item, index) => (
 						<div key={`${item.name}-${index}`} className='basket-item'>
-							<img src={item.photoName} alt={item.name} />
+							<img src={item.images} alt={item.name} />
 							<div className='basket-info'>
 								<p>{item.description}</p>
 								<div className='order-info'>

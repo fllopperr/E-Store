@@ -5,7 +5,6 @@ function HistoryBar({ lastViewed, addToBasket }) {
 	const [history, setHistory] = useState([])
 	const sliderRef = useRef(null)
 
-	// Добавляем просмотренный товар в историю
 	useEffect(() => {
 		if (lastViewed) {
 			setHistory(prev => {
@@ -52,7 +51,7 @@ function HistoryBar({ lastViewed, addToBasket }) {
 					{history.length > 0 &&
 						history.map((item, index) => (
 							<div key={`${item.name}-${index}`} className='last-viewed'>
-								<img src={item.photoName} alt={item.name} />
+								<img src={item.images} alt={item.name} />
 								<p>{item.description}</p>
 								<div className='order-info'>
 									<div className='order-price'>

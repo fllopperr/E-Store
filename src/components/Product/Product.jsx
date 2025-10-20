@@ -2,14 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import { useFavorites } from '../../favorite/FavoriteContext'
 import './Product.css'
 
-function Product({ productObject, onView, addToBasket, item }) {
-	const { name, price, description, photoName, soldOut, details } =
-		productObject
+function Product({ onView, addToBasket, item }) {
 	const [expanded, setExpanded] = useState(false)
 	const cardRef = useRef(null)
 	const { favorites, toggleFavorites } = useFavorites()
 
-	const isFavorites = favorites.some(p => p.name === name)
+	const isFavorites = favorites.some(p => p.name === item.name)
 
 	useEffect(() => {
 		if (expanded && cardRef.current) {
@@ -22,39 +20,38 @@ function Product({ productObject, onView, addToBasket, item }) {
 	}, [expanded])
 
 	const toggle = () => {
-		if (soldOut) return
-
+		if (!item.inStock) return
 		const next = !expanded
 		setExpanded(next)
-		if (next) onView(productObject)
+		if (next) onView(item)
 	}
 
 	return (
 		<li
 			ref={cardRef}
 			className={`product ${expanded ? 'expanded' : ''} ${
-				soldOut ? 'sold-out' : ''
+				!item.inStock ? 'sold-out' : ''
 			}`}
 			onClick={toggle}
-			style={{ cursor: soldOut ? 'default' : 'pointer' }}
+			style={{ cursor: item.inStock ? 'pointer' : 'default' }}
 		>
 			<div className='product-content'>
-				<img src={photoName} alt={photoName} />
+				<img src={item.images} alt={item.images} />
 				<div>
-					<h3>{name}</h3>
-					<p>{description}</p>
+					<h3>{item.name}</h3>
+					<p>{item.description}</p>
 					<div className='price-info'>
-						<span>{price} ₽</span>
+						<span>{item.price} ₽</span>
 						<div className='order-btn'>
 							<button
 								className='btn-basket'
 								onClick={e => {
 									e.stopPropagation()
-									if (!soldOut) {
+									if (item.inStock) {
 										addToBasket(item, e)
 									}
 								}}
-								disabled={soldOut}
+								disabled={!item.inStock}
 							>
 								<svg
 									width='20'
@@ -67,8 +64,10 @@ function Product({ productObject, onView, addToBasket, item }) {
 							</button>
 						</div>
 					</div>
-					<p className={`status ${soldOut ? 'sold-out-text' : 'in-stock'}`}>
-						Статус: {soldOut ? 'Продан' : 'В наличии'}
+					<p
+						className={`status ${item.inStock ? 'in-stock' : 'sold-out-text'}`}
+					>
+						Статус: {item.inStock ? 'В наличии' : 'Продан'}
 					</p>
 				</div>
 
@@ -76,11 +75,11 @@ function Product({ productObject, onView, addToBasket, item }) {
 					className={`fav-btn ${isFavorites ? 'active' : ''}`}
 					onClick={e => {
 						e.stopPropagation()
-						if (!soldOut) {
-							toggleFavorites(productObject)
+						if (item.inStock) {
+							toggleFavorites(item)
 						}
 					}}
-					disabled={soldOut}
+					disabled={!item.inStock}
 				>
 					{isFavorites ? '❤️' : '🤍'}
 				</button>
@@ -88,9 +87,9 @@ function Product({ productObject, onView, addToBasket, item }) {
 
 			{expanded && (
 				<div className='details'>
-					{Array.isArray(details) && details.length > 0 ? (
+					{Array.isArray(item.specs) && item.specs.length > 0 ? (
 						<ul>
-							{details.map((d, i) => (
+							{item.specs.map((d, i) => (
 								<li key={i}>{d}</li>
 							))}
 						</ul>
